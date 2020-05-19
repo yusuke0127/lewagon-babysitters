@@ -20,12 +20,14 @@
     <div id="Pending" class="w3-container city" style="display:none">
       <h2>Pending</h2>
       <% @reservations.each do |reservation| %>
-        <% if reservation.status == "pending" %>
-          <li>
-          Date: <%= reservation.start_time.strftime("%d %h %Y") %>
-          Time: <%= reservation.start_time.strftime("%H:%M") %> - <%= reservation.end_time.strftime("%H:%M") %>,
-          Babysitter: <%= reservation.babysitter.user.first_name %>
-          </li>
+        <% if reservation.user == current_user %>
+          <% if reservation.status == "pending" %>
+            <li>
+            Date: <%= reservation.start_time.strftime("%d %h %Y") %>
+            Time: <%= reservation.start_time.strftime("%H:%M") %> - <%= reservation.end_time.strftime("%H:%M") %>,
+            Babysitter: <%= reservation.babysitter.user.first_name %>
+            </li>
+          <% end %>
         <% end %>
       <% end %>
     </div>
