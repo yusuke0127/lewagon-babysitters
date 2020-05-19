@@ -1,2 +1,10 @@
-<h1>test</h1>
-<%= @reservations %>
+<div class="container mt-5">
+<h1>Babysitter Reservations</h1>
+  <% @reservations.each do |reservation| %>
+    <li>
+    Date: <%= reservation.start_time.strftime("%d %h %Y") %>
+    Time: <%= reservation.start_time.strftime("%H:%M") %> - <%= reservation.end_time.strftime("%H:%M") %>,
+    Babysitter: <%= reservation.babysitter.user.first_name %>
+    </li>
+  <% end %>
+</div>
