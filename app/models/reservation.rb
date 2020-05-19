@@ -4,4 +4,7 @@ class Reservation < ApplicationRecord
 
   validates :start_time, presence: true
   validates :end_time, presence: true
+#   validates :babysitter, uniqueness: { scope: :user }
+#   validates :babysitter, uniqueness: { scope: :start_time }
+#   validates :babysitter, uniqueness: { scope: :end_time }
 end
