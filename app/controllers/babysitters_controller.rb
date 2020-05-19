@@ -5,6 +5,7 @@ class BabysittersController < ApplicationController
   end
 
   def show
+    @reservation = Reservation.new
     @babysitter = Babysitter.find(params[:id])
     authorize @babysitter
   end
