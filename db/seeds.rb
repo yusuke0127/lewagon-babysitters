@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 puts "Clearing database..."
 User.destroy_all
+Babysitter.destroy_all
 
 puts "Creating pins"
 pins = User.create!(
@@ -19,6 +20,18 @@ pins = User.create!(
   )
 puts "Done"
 
+puts "Starting to create pins babysitter"
+
+pins_sitter = Babysitter.new(
+  age: 27,
+  price_per_hour: 2000,
+  description: "I'm good at design"
+  )
+pins_sitter.user = pins
+pins_sitter.save!
+
+puts "Done creating #{pins.first_name} the babysitter"
+
 puts "Creating katsu"
 katsu = User.create!(
   first_name: "Katsu",
@@ -29,6 +42,17 @@ katsu = User.create!(
   password: "123456"
   )
 puts "Done"
+
+katsu_sitter = Babysitter.new(
+  age: 25,
+  price_per_hour: 1000,
+  description: "I'm mr nice guy!"
+  )
+
+katsu_sitter.user = katsu
+katsu_sitter.save!
+
+puts "Done creating #{katsu.first_name} the babysitter"
 
 puts "Creating yusuke"
 yusuke = User.create!(
@@ -41,6 +65,17 @@ yusuke = User.create!(
   )
 
 puts "Done"
+
+yusuke_sitter = Babysitter.new(
+  age: 27,
+  price_per_hour: 1500,
+  description: "I love kids!"
+  )
+
+yusuke_sitter.user = yusuke
+yusuke_sitter.save!
+
+puts "Done creating #{yusuke.first_name} the babysitter"
 
 
 puts "Creating fake seeds"
