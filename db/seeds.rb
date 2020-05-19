@@ -6,8 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 puts "Clearing database..."
-User.destroy_all
+Reservation.destroy_all
 Babysitter.destroy_all
+User.destroy_all
 
 puts "Creating pins"
 pins = User.create!(
@@ -77,9 +78,54 @@ yusuke_sitter.save!
 
 puts "Done creating #{yusuke.first_name} the babysitter"
 
+puts "Creating doug"
+doug = User.create!(
+  first_name: "Doug",
+  last_name: "Berkely",
+  address: "Meguro 'murica",
+  phone_number: "0905123123213",
+  email: "doug.berkely@gmail.com",
+  password: "123456"
+  )
+
+puts "Done creating #{doug.first_name}"
+
+puts "Creating trouni"
+trouni = User.create!(
+  first_name: "Trouni",
+  last_name: "Tiet",
+  address: "Meguro france",
+  phone_number: "0905126823213",
+  email: "trouni@gmail.com",
+  password: "123456"
+  )
+
+puts "Done creating #{trouni.first_name}"
+
+puts "Creating a reservation"
+
+reservation_1 = Reservation.new(
+  start_time: Faker::Time.forward(days: 1, period: :afternoon),
+  end_time: Faker::Time.forward(days: 1, period: :evening),
+  number_of_children: 2
+  )
+reservation_1.user = doug
+reservation_1.babysitter = katsu_sitter
+reservation_1.save!
+
+reservation_2 = Reservation.new(
+  start_time: Faker::Time.forward(days: 1, period: :afternoon),
+  end_time: Faker::Time.forward(days: 1, period: :evening),
+  number_of_children: 1
+  )
+reservation_2.user = trouni
+reservation_2.babysitter = yusuke_sitter
+reservation_2.save!
+
+puts "Done creating a fake reservation"
 
 puts "Creating fake seeds"
-50.times do
+10.times do
   user = User.create!(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
