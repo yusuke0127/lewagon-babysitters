@@ -9,10 +9,11 @@ class ReservationsController < ApplicationController
 
   def create
     @babysitter = Babysitter.find(params[:babysitter_id])
-    @user = User.find(@babysitter.user_id)
+    # @user = User.find(@babysitter.user_id)
     @reservation = Reservation.new(reservation_params)
     @reservation.babysitter = @babysitter
-    @reservation.user = @user
+    @reservation.user = current_user
+    # @reservation.user = @user
     authorize @reservation
     if @reservation.save
       redirect_to reservations_path
