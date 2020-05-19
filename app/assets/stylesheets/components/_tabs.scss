@@ -1,0 +1,21 @@
+
+.w3-row {
+  display: flex;
+  border-bottom: 1px solid #999696 ;
+  a {
+    font-size: 24px;
+    text-decoration: none;
+    color: #999696;
+  }
+}
+.w3-row a:hover{
+  color:  #585858;
+}
+
+.w3-third {
+  margin: 10px;
+}
+
+.w3-container {
+  margin: 10px;
+}
