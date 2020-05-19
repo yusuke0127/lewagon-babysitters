@@ -6,8 +6,8 @@
   <ul>
     <% @reservations.each do |reservation| %>
       <li>
-      Time: <%= reservation.start_time %> - <%= reservation.end_time %>,
-      Childrens: <%= reservation.number_of_children %>
+      Date: <%= reservation.start_time.strftime("%d %h %Y") %>
+      Time: <%= reservation.start_time.strftime("%H:%M") %> - <%= reservation.end_time.strftime("%H:%M") %>,
       Babysitter: <%= reservation.babysitter.user.first_name %>
       </li>
     <% end %>
