@@ -1,12 +1,20 @@
 .cards {
   display: flex;
 }
+.card-remove-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+}
 
 .card-category {
   background-size: cover;
   background-position: center;
   height: 240px;
-  width: 640px;
+  width: 900px;
   color: black;
   font-size: 20px;
   font-weight: light;
@@ -43,6 +51,7 @@
 
 .row {
   justify-content: center;
+  position: relative;
 }
 
 
