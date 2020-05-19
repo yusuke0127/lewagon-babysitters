@@ -1,4 +1,34 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1563263427-708318a97183?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3452&q=80);">
+  <div class="title-main">
+    <h1><strong>Find Your Babysitter</strong></h1>
+  </div>
+
+  <div id="searchbar">
+    <!-- <div class="searchbar"> -->
+      <form id="searchbar-form" action="/babysitters">
+        <!-- <div class="searchbar__input-wrapper"> -->
+          <label class="searchbar__input">
+            <input id="location" type="text" class="input-large input-contrast" autocomplete="off" name="location" placeholder="Enter a location...">
+          </label>
+
+          <label class="searchbar__input">
+            <input id="price" type="number" class="price input-large input-contrast" name="price" placeholder="Price">
+          </label>
+
+          <label class="searchbar__input">
+            <input id="date" type="datetime" class="date input-large input-contrast" name="date" placeholder="Add date">
+          </label>
+        <!-- </div> -->
+
+        <button id="submit_location" type="submit" class="searchbar__submit btn btn-primary btn-large">
+          <i class="fas fa-search"></i>
+        </button>
+      </form>
+    <!-- </div> -->
+  </div>
+
 </div>
+
+
 
 
