@@ -1,8 +1,15 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: #F8D55B;
+  // transition: background-color 0.5s ease;
   h2 {
-    font-weight: bold;
+    font-weight: 700;
+    font-size: 28px;
+    letter-spacing: 1px;
+    transition:.6s ease;
+    &:hover {
+    color: white;
+    }
   }
   a {
     font-weight: bold;
