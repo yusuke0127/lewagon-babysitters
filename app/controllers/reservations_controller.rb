@@ -1,6 +1,6 @@
 class ReservationsController < ApplicationController
   def index
-    @reservations = Reservation.all
+    @reservations = policy_scope(Reservation)
   end
 
   # def index_babysitter
@@ -25,3 +25,4 @@ class ReservationsController < ApplicationController
     params.require(:reservation).permit(:start_time, :end_time, :babysitter_id)
   end
 end
+

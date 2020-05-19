@@ -1,0 +1,28 @@
+
+#searchbar {
+  margin: 20px;
+}
+
+#searchbar-form {
+  display: flex;
+  input {
+    height: 100%;
+    width: 300px;
+  }
+}
+
+.searchbar__input {
+  height: 100%;
+  margin: 0;
+}
+
+.searchbar__input-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  width: 1000px;
+}
+
+#submit_location {
+  background: #F8D55B;
+  border-color: #F8D55B;
+}
