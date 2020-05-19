@@ -1,3 +1,15 @@
-<% @babysitters.each do |babysitter| %>
-  <% babysitter %>
-<% end %>
+<h1>All Babysitters</h1>
+
+<ul>
+  <% @babysitters.each do |babysitter| %>
+    <li>
+      Name: <%= babysitter.user.first_name %>,
+      Age: <%= babysitter.age %>,
+      Price: $ <%= babysitter.price_per_hour %>,
+      Description: <%= babysitter.description %>,
+      Address: <%= babysitter.user.address %>,
+      Tel: <%= babysitter.user.phone_number %>
+      Email: <%= babysitter.user.email %>
+    </li>
+  <% end %>
+</ul>
