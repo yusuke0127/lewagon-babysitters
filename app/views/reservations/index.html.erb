@@ -1,22 +1,88 @@
 <div class="container mt-5">
+  <div class="w3-container">
+    <h1>Bookings</h1>
 
-  <h1>Bookings</h1>
+    <div class="w3-row">
+      <a href="javascript:void(0)" onclick="openCity(event, 'Pending');">
+        <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Pending</div>
+      </a>
+      <a href="javascript:void(0)" onclick="openCity(event, 'Confirmed');">
+        <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Confirmed</div>
+      </a>
+      <a href="javascript:void(0)" onclick="openCity(event, 'Past');">
+        <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Past</div>
+      </a>
+      <a href="javascript:void(0)" onclick="openCity(event, 'Canceled');">
+        <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Canceled</div>
+      </a>
+    </div>
 
-  <h5>Pending: </h5>
-  <ul>
-    <% @reservations.each do |reservation| %>
-      <li>
-      Date: <%= reservation.start_time.strftime("%d %h %Y") %>
-      Time: <%= reservation.start_time.strftime("%H:%M") %> - <%= reservation.end_time.strftime("%H:%M") %>,
-      Babysitter: <%= reservation.babysitter.user.first_name %>
-      </li>
-    <% end %>
-  <ul>
+    <div id="Pending" class="w3-container city" style="display:none">
+      <h2>Pending</h2>
+      <% @reservations.each do |reservation| %>
+        <% if reservation.status == "pending" %>
+          <li>
+          Date: <%= reservation.start_time.strftime("%d %h %Y") %>
+          Time: <%= reservation.start_time.strftime("%H:%M") %> - <%= reservation.end_time.strftime("%H:%M") %>,
+          Babysitter: <%= reservation.babysitter.user.first_name %>
+          </li>
+        <% end %>
+      <% end %>
+    </div>
 
-  <h5>Confirmed: </h5>
+    <div id="Confirmed" class="w3-container city" style="display:none">
+      <h2>Confirmed</h2>
+      <% @reservations.each do |reservation| %>
+        <% if reservation.status == "confirmed" %>
+          <li>
+          Date: <%= reservation.start_time.strftime("%d %h %Y") %>
+          Time: <%= reservation.start_time.strftime("%H:%M") %> - <%= reservation.end_time.strftime("%H:%M") %>,
+          Babysitter: <%= reservation.babysitter.user.first_name %>
+          </li>
+        <% end %>
+      <% end %>
+    </div>
 
-  <h5>Past: </h5>
+    <div id="Past" class="w3-container city" style="display:none">
+      <h2>Past</h2>
+      <% @reservations.each do |reservation| %>
+        <% if reservation.status == "past" %>
+          <li>
+          Date: <%= reservation.start_time.strftime("%d %h %Y") %>
+          Time: <%= reservation.start_time.strftime("%H:%M") %> - <%= reservation.end_time.strftime("%H:%M") %>,
+          Babysitter: <%= reservation.babysitter.user.first_name %>
+          </li>
+          <% end %>
+      <% end %>
+    </div>
 
-  <h5>Canceled: </h5>
-
+    <div id="Canceled" class="w3-container city" style="display:none">
+      <h2>Canceled</h2>
+      <% @reservations.each do |reservation| %>
+        <% if reservation.status == "canceled" %>
+          <li>
+          Date: <%= reservation.start_time.strftime("%d %h %Y") %>
+          Time: <%= reservation.start_time.strftime("%H:%M") %> - <%= reservation.end_time.strftime("%H:%M") %>,
+          Babysitter: <%= reservation.babysitter.user.first_name %>
+          </li>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 </div>
+
+<script>
+function openCity(evt, cityName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("city");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-border-red", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-border-red";
+}
+</script>
