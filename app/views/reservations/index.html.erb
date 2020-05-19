@@ -19,58 +19,76 @@
 
     <div id="Pending" class="w3-container city" style="display:none">
       <h2>Pending</h2>
-      <% @reservations.each do |reservation| %>
-        <% if reservation.user == current_user %>
-          <% if reservation.status == "pending" %>
-            <li>
-            Date: <%= reservation.start_time.strftime("%d %h %Y") %>
-            Time: <%= reservation.start_time.strftime("%H:%M") %> - <%= reservation.end_time.strftime("%H:%M") %>,
-            Babysitter: <%= reservation.babysitter.user.first_name %>
-            </li>
+      <ul class="list-group list-group-flush mx-3 p-3">
+        <% @reservations.each do |reservation| %>
+          <% if reservation.user == current_user %>
+            <% if reservation.status == "pending" %>
+              <li class="list-group-item">
+              Date: <%= reservation.start_time.strftime("%d %h %Y") %>
+              Time: <%= reservation.start_time.strftime("%H:%M") %> - <%= reservation.end_time.strftime("%H:%M") %>,
+              Babysitter: <%= reservation.babysitter.user.first_name %>
+              </li>
+            <% end %>
           <% end %>
         <% end %>
-      <% end %>
+
+      </ul>
     </div>
 
     <div id="Confirmed" class="w3-container city" style="display:none">
       <h2>Confirmed</h2>
-      <% @reservations.each do |reservation| %>
-        <% if reservation.status == "confirmed" %>
-          <li>
-          Date: <%= reservation.start_time.strftime("%d %h %Y") %>
-          Time: <%= reservation.start_time.strftime("%H:%M") %> - <%= reservation.end_time.strftime("%H:%M") %>,
-          Babysitter: <%= reservation.babysitter.user.first_name %>
-          </li>
+      <ul class="list-group list-group-flush">
+        <% @reservations.each do |reservation| %>
+          <% if reservation.user == current_user %>
+
+            <% if reservation.status == "confirmed" %>
+              <li class="list-group-item">
+              Date: <%= reservation.start_time.strftime("%d %h %Y") %>
+              Time: <%= reservation.start_time.strftime("%H:%M") %> - <%= reservation.end_time.strftime("%H:%M") %>,
+              Babysitter: <%= reservation.babysitter.user.first_name %>
+              </li>
+            <% end %>
+          <% end %>
         <% end %>
-      <% end %>
+      </ul>
     </div>
 
     <div id="Past" class="w3-container city" style="display:none">
       <h2>Past</h2>
-      <% @reservations.each do |reservation| %>
-        <% if reservation.status == "past" %>
-          <li>
-          Date: <%= reservation.start_time.strftime("%d %h %Y") %>
-          Time: <%= reservation.start_time.strftime("%H:%M") %> - <%= reservation.end_time.strftime("%H:%M") %>,
-          Babysitter: <%= reservation.babysitter.user.first_name %>
-          </li>
-          <% end %>
-      <% end %>
+      <ul class="list-group list-group-flush">
+        <% @reservations.each do |reservation| %>
+          <% if reservation.user == current_user %>
+            <% if reservation.status == "past" %>
+              <li class="list-group-item">
+              Date: <%= reservation.start_time.strftime("%d %h %Y") %>
+              Time: <%= reservation.start_time.strftime("%H:%M") %> - <%= reservation.end_time.strftime("%H:%M") %>,
+              Babysitter: <%= reservation.babysitter.user.first_name %>
+              </li>
+              <% end %>
+            <% end %>
+        <% end %>
+      </ul>
     </div>
 
     <div id="Canceled" class="w3-container city" style="display:none">
       <h2>Canceled</h2>
-      <% @reservations.each do |reservation| %>
-        <% if reservation.status == "canceled" %>
-          <li>
-          Date: <%= reservation.start_time.strftime("%d %h %Y") %>
-          Time: <%= reservation.start_time.strftime("%H:%M") %> - <%= reservation.end_time.strftime("%H:%M") %>,
-          Babysitter: <%= reservation.babysitter.user.first_name %>
-          </li>
+      <ul class="list-group-flush">
+        <% @reservations.each do |reservation| %>
+          <% if reservation.user == current_user %>
+
+            <% if reservation.status == "canceled" %>
+              <li class="list-group-item">
+              Date: <%= reservation.start_time.strftime("%d %h %Y") %>
+              Time: <%= reservation.start_time.strftime("%H:%M") %> - <%= reservation.end_time.strftime("%H:%M") %>,
+              Babysitter: <%= reservation.babysitter.user.first_name %>
+              </li>
+            <% end %>
+          <% end %>
         <% end %>
-      <% end %>
+      </ul>
+      </div>
     </div>
-  </div>
+
 </div>
 
 <script>
