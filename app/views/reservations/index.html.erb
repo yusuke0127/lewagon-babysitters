@@ -1,0 +1,22 @@
+<div class="container mt-5">
+
+  <h1>Bookings</h1>
+
+  <h5>Pending: </h5>
+  <ul>
+    <% @reservations.each do |reservation| %>
+      <li>
+      Time: <%= reservation.start_time %> - <%= reservation.end_time %>,
+      Childrens: <%= reservation.number_of_children %>
+      Babysitter: <%= reservation.babysitter.user.first_name %>
+      </li>
+    <% end %>
+  <ul>
+
+  <h5>Confirmed: </h5>
+
+  <h5>Past: </h5>
+
+  <h5>Canceled: </h5>
+
+</div>
