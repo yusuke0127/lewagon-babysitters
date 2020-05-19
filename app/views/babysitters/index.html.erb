@@ -1,17 +1,26 @@
 <div class="container mt-5">
 
 <h1>All Babysitters</h1>
-
-  <ul>
-    <% @babysitters.each do |babysitter| %>
-      <li>
-        Name: <%= link_to babysitter.user.first_name, babysitter_path(babysitter) %>,
-        Age: <%= babysitter.age %>,
-        Location: <%= babysitter.user.address %>,
-        Price: $ <%= babysitter.price_per_hour %>,
-        Description: <%= babysitter.description %>,
-      </li>
-    <% end %>
-  </ul>
-
+  <div class="cards">
+    <div class="row">
+      <% @babysitters.each do |babysitter| %>
+        <div class="card-category col-6" style="background-color: white ">
+          <div class="top-card p-4">
+            <div class="sitter-info">
+              <h1><%= link_to babysitter.user.first_name, babysitter_path(babysitter) %></h1>
+              <!-- <p><%= babysitter.age %></p> -->
+              <!-- <p><%= babysitter.user.address %></p> -->
+              <p><%= babysitter.description %></p>
+            </div>
+            <div class="avatar-large mr-3">
+              <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar-large", alt: "avatar-large" %>
+            </div>
+          </div>
+          <div class="bottom_card border-top">
+            <p>Price: $ <%= babysitter.price_per_hour %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
