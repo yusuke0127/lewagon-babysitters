@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get '/babysitters', to: 'babysitters#index', as: :babysitters
   get '/babysitters/:id', to: 'babysitters#show', as: :babysitter
+  get '/babysitter/reservations', to: 'reservations#index_babysitter'
 
   # reservations
   get '/reservations', to: 'reservations#index', as: :reservations
