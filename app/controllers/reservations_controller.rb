@@ -13,6 +13,7 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new(reservation_params)
     @reservation.babysitter = @babysitter
     @reservation.user = @user
+    authorize @reservation
     if @reservation.save
       redirect_to reservations_path
     else
