@@ -8,7 +8,16 @@
       <form id="searchbar-form" action="/babysitters">
         <!-- <div class="searchbar__input-wrapper"> -->
           <label class="searchbar__input">
-            <input id="location" type="text" class="input-large input-contrast" autocomplete="off" name="location" placeholder="Enter a location...">
+            <input id="babysitter_address" type="search" class="input-large input-contrast" name="location" placeholder="Enter a location..." style="height: 56px; width: 370px; margin-right: .4px;">
+
+          <script src="https://cdn.jsdelivr.net/npm/places.js@1.18.2"></script>
+          <script>
+            var placesAutocomplete = places({
+              appId: 'plVUFUC1636O',
+              apiKey: '5e2dacadf19070f6459aee66a275d91f',
+              container: document.querySelector('#babysitter_address')
+            });
+          </script>
           </label>
 
           <label class="searchbar__input">
