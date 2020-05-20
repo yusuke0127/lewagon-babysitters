@@ -83,7 +83,7 @@
       <ul class="list-group-flush">
         <% @reservations.each do |reservation| %>
           <% if reservation.user == current_user %>
-            <% if reservation.status == "canceled" %>
+            <% if reservation.status == "cancelled" %>
 
               <div class="card-bookings mb-4">
                 <%= image_tag reservation.babysitter.user.image_url %>
