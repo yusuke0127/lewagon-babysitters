@@ -49,16 +49,51 @@ katsu = User.create!(
   )
 puts "Done"
 
-katsu_sitter = Babysitter.new(
-  age: 25,
-  price_per_hour: 1000,
-  description: "I'm mr nice guy!"
+puts "Creating Bill"
+bill = User.create!(
+  first_name: "Bill",
+  last_name: "Cosby",
+  address: "456 Shinjuku 2-chome, Tokyo",
+  phone_number: "09056741234",
+  email: "bill.cosby@gmail.com",
+  password: "123456",
+  image_url: 'https://kitt.lewagon.com/placeholder/users/mrnakamura721'
+  )
+puts "Done"
+
+bill_sitter = Babysitter.new(
+  age: 82,
+  price_per_hour: 10000,
+  description: "I'm mr nice guy! I love playing with kids"
   )
 
-katsu_sitter.user = katsu
-katsu_sitter.save!
+bill_sitter.user = bill
+bill_sitter.save!
 
-puts "Done creating #{katsu.first_name} the babysitter"
+puts "Done creating #{bill.first_name} the babysitter"
+
+puts "Creating Shogo"
+shogo = User.create!(
+  first_name: "Shogo",
+  last_name: "Hida",
+  address: "456 Shinjuku 1-chome, Tokyo",
+  phone_number: "0901234697534",
+  email: "shogo.hida@gmail.com",
+  password: "123456",
+  image_url: 'https://kitt.lewagon.com/placeholder/users/shogohida'
+  )
+puts "Done"
+
+shogo_sitter = Babysitter.new(
+  age: 82,
+  price_per_hour: 1800,
+  description: "Hi! I'm Shogo! I love Rick Astley"
+  )
+
+shogo_sitter.user = shogo
+shogo_sitter.save!
+
+puts "Done creating #{shogo.first_name} the babysitter"
 
 puts "Creating yusuke"
 yusuke = User.create!(
@@ -76,7 +111,7 @@ puts "Done"
 yusuke_sitter = Babysitter.new(
   age: 27,
   price_per_hour: 1500,
-  description: "I love kids!"
+  description: "I love kids! I'm here if you need help"
   )
 
 yusuke_sitter.user = yusuke
