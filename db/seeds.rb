@@ -17,7 +17,7 @@ puts "Creating pins"
 pins = User.create!(
   first_name: "Pins",
   last_name: "Thoo",
-  address: "123 Kuala Lumpur",
+  address: "123 Kuala Lumpur, Tokyo",
   phone_number: "09099887766",
   email: "pins.thoo@gmail.com",
   password: "123456",
@@ -41,7 +41,7 @@ puts "Creating katsu"
 katsu = User.create!(
   first_name: "Katsu",
   last_name: "Furugen",
-  address: "456 Yokohama",
+  address: "456 Shinjuku 3-chome, Tokyo",
   phone_number: "09087651234",
   email: "katsu.furugen@gmail.com",
   password: "123456",
@@ -64,7 +64,7 @@ puts "Creating yusuke"
 yusuke = User.create!(
   first_name: "Yusuke",
   last_name: "Ishida",
-  address: "789 Meguro",
+  address: "789 Meguro, Tokyo",
   phone_number: "09056781234",
   email: "yusuke.ishida@gmail.com",
   password: "123456",
@@ -105,7 +105,7 @@ trouni = User.create!(
   phone_number: "0905126823213",
   email: "trouni@gmail.com",
   password: "123456",
-  image_url: 'https://kitt.lewagon.com/placeholder/users'
+  image_url: 'https://kitt.lewagon.com/placeholder/users/random'
   )
 
 puts "Done creating #{trouni.first_name}"
@@ -146,14 +146,14 @@ babysitter_list = [pins_sitter, katsu_sitter, yusuke_sitter]
 end
 
 puts "Done creating a fake reservation"
-
+address_list = ['Meguro, Tokyo', 'Shibuya, Tokyo', 'Shinjuku, Tokyo', 'Ropponggi, Tokyo']
 puts "Creating fake seeds"
 10.times do
   image_url = open('http://le-wagon-tokyo.herokuapp.com/batches/394/student').read
   fake_user = User.create!(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
-    address: Faker::Address.street_address,
+    address: address_list.sample,
     phone_number: Faker::PhoneNumber.phone_number,
     email: Faker::Internet.email,
     password: "123456",
