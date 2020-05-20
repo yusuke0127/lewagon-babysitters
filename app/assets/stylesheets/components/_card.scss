@@ -63,7 +63,7 @@
 }
 
 
-/////////////////////////////////
+///////////tab cards//////////////////////
 .card-bookings {
   overflow: hidden;
   height: 120px;
@@ -86,11 +86,15 @@
 }
 
 .card-bookings p {
-  font-size: 12px;
+  font-size: 16px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
+}
+
+.card-bookings-infos {
+  margin-left: 8px;
 }
 
 .card-bookings .card-bookings-infos {
