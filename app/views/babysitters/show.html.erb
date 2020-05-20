@@ -4,7 +4,7 @@
 
 <div class="reserve-container">
   <div class="card-product">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+    <%= image_tag @babysitter.user.image_url, alt: "alttext"%>
     <div class="card-product-infos ml-3">
       <h1><%= @babysitter.description %></h1>
 
@@ -24,7 +24,7 @@
 
 
 
-<%= link_to "Return to Babysitters", babysitters_path, class:"btn btn-outline-info mt-3" %>
+<%= link_to "Return to Babysitters", babysitters_path, class: "btn btn-outline-info mt-3" %>
 
 </div>
 
