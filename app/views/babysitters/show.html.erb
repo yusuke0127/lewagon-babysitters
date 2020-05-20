@@ -9,12 +9,16 @@
     <%= image_tag @babysitter.user.image_url, alt: "alttext"%>
     <div class="card-product-infos ml-3">
       <h1><%= @babysitter.description %></h1>
+      <h5> ✅ Speaks Spanish </h5>
+      <h5> ✅ Comfortable with pets </h5>
+      <h6>Hello, My name is <%= @babysitter.user.first_name %>. </h6>
+      <h6>I am a college student with experience in medical and currently a babysitter</h6>
+      <hr>
+      <h5>Location: <%= @babysitter.user.address %></h5>
 
-      <h4>Location: <%= @babysitter.user.address %></h4>
+      <h5>Email: <a href="mailto:<%= @babysitter.user.email %>">Email me here</a></h5>
 
-      <h4>Email: <%= @babysitter.user.email %></h4>
-
-      <h3>Price: <strong>¥ <%= @babysitter.price_per_hour %></strong> /<em>hr</em></h3>
+      <h5>Price: <strong>¥ <%= @babysitter.price_per_hour %></strong> /<em>hr</em></h5>
     </div>
   </div>
 
