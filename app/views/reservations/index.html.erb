@@ -4,7 +4,7 @@
 
     <div class="w3-row">
       <a href="javascript:void(0)" onclick="openCity(event, 'Pending');">
-        <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Pending</div>
+        <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding w3-active">Pending</div>
       </a>
       <a href="javascript:void(0)" onclick="openCity(event, 'Confirmed');">
         <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Confirmed</div>
@@ -17,7 +17,7 @@
       </a>
     </div>
 
-    <div id="Pending" class="w3-container city" style="display:none">
+    <div id="Pending" class="w3-container city" style="display:block">
       <ul class="list-group list-group-flush mx-3 p-3">
         <% @reservations.each do |reservation| %>
           <% if reservation.user == current_user %>
@@ -112,9 +112,10 @@ function openCity(evt, cityName) {
   }
   tablinks = document.getElementsByClassName("tablink");
   for (i = 0; i < x.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" w3-border-red", "");
+    tablinks[i].className = tablinks[i].className.replace(" w3-active", "");
   }
   document.getElementById(cityName).style.display = "block";
-  evt.currentTarget.firstElementChild.className += " w3-border-red";
+  evt.currentTarget.firstElementChild.className += " w3-active";
+  console.log(evt.currentTarget.firstElementChild)
 }
 </script>
