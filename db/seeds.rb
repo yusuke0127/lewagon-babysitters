@@ -5,6 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'open-uri'
+
+
 puts "Clearing database..."
 Reservation.destroy_all
 Babysitter.destroy_all
@@ -17,7 +20,8 @@ pins = User.create!(
   address: "123 Kuala Lumpur",
   phone_number: "09099887766",
   email: "pins.thoo@gmail.com",
-  password: "123456"
+  password: "123456",
+  image_url: 'https://kitt.lewagon.com/placeholder/users/pins-thoo'
   )
 puts "Done"
 
@@ -40,7 +44,8 @@ katsu = User.create!(
   address: "456 Yokohama",
   phone_number: "09087651234",
   email: "katsu.furugen@gmail.com",
-  password: "123456"
+  password: "123456",
+  image_url: 'https://kitt.lewagon.com/placeholder/users/Katsulincon'
   )
 puts "Done"
 
@@ -62,7 +67,8 @@ yusuke = User.create!(
   address: "789 Meguro",
   phone_number: "09056781234",
   email: "yusuke.ishida@gmail.com",
-  password: "123456"
+  password: "123456",
+  image_url: 'https://kitt.lewagon.com/placeholder/users/yusuke0127'
   )
 
 puts "Done"
@@ -85,7 +91,8 @@ doug = User.create!(
   address: "Meguro 'murica",
   phone_number: "0905123123213",
   email: "doug.berkely@gmail.com",
-  password: "123456"
+  password: "123456",
+  image_url: 'https://kitt.lewagon.com/placeholder/users/dmbf29'
   )
 
 puts "Done creating #{doug.first_name}"
@@ -97,7 +104,8 @@ trouni = User.create!(
   address: "Meguro france",
   phone_number: "0905126823213",
   email: "trouni@gmail.com",
-  password: "123456"
+  password: "123456",
+  image_url: 'https://kitt.lewagon.com/placeholder/users'
   )
 
 puts "Done creating #{trouni.first_name}"
