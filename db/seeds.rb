@@ -112,14 +112,6 @@ puts "Done creating #{trouni.first_name}"
 
 puts "Creating a reservation"
 
-reservation_1 = Reservation.new(
-  start_time: Faker::Time.forward(days: 1, period: :afternoon),
-  end_time: Faker::Time.forward(days: 1, period: :evening),
-  number_of_children: 2
-  )
-reservation_1.user = doug
-reservation_1.babysitter = katsu_sitter
-reservation_1.save!
 
 reservation_2 = Reservation.new(
   start_time: Faker::Time.forward(days: 1, period: :afternoon),
@@ -130,8 +122,8 @@ reservation_2.user = trouni
 reservation_2.babysitter = yusuke_sitter
 reservation_2.save!
 
-status = ['pending', 'past', 'confirmed', 'cancelled']
-babysitter_list = [pins_sitter, katsu_sitter, yusuke_sitter]
+status = ['past', 'confirmed', 'cancelled']
+babysitter_list = [pins_sitter, yusuke_sitter]
 
 10.times do
   reservation = Reservation.new(
