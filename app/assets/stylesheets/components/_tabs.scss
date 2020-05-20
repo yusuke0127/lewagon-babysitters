@@ -6,6 +6,7 @@
     font-size: 24px;
     text-decoration: none;
     color: #999696;
+
   }
 }
 .w3-row a:hover{
@@ -21,8 +22,15 @@
 }
 
 .w3-active {
-  color:  #585858;
+  color: black;
+  background-color: #F8D55A;
+  border-radius: 5px;
+  width: 140px;
+  height: 46px;
+  text-align: center;
+  margin-bottom: 0px;
   a {
     font-style: bold;
+
   }
 }
