@@ -1,7 +1,11 @@
 <div class="container mt-5">
 
-<h1>All Babysitters</h1>
-  <div class="cards">
+<%= render "shared/pages_search_bar" %>
+<div>
+  <p class="babysitter-number">10+ babysitters</p>
+  <h2 class="babysitter-title">Babysitters in Tokyo</h2>
+</div>
+  <div class="cards mt-5">
     <div class="row">
       <% @babysitters.each do |babysitter| %>
 
@@ -18,7 +22,7 @@
               </div>
             </div>
             <div class="bottom_card border-top">
-              <p>Price: $ <%= babysitter.price_per_hour %></p>
+              <p><strong>¥ <%= babysitter.price_per_hour %></strong> /<em>hr</em></p>
             </div>
             <%= link_to '', babysitter_path(babysitter), class: "card-remove-link"  %>
           </div>
@@ -26,3 +30,5 @@
     </div>
   </div>
 </div>
+
+
