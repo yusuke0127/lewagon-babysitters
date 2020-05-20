@@ -130,18 +130,42 @@ reservation_2.user = trouni
 reservation_2.babysitter = yusuke_sitter
 reservation_2.save!
 
+status = ['pending', 'past', 'confirmed', 'cancelled']
+babysitter_list = [pins_sitter, katsu_sitter, yusuke_sitter]
+
+10.times do
+  reservation = Reservation.new(
+    start_time: Faker::Time.backward(days: 14, period: :afternoon),
+    end_time: Faker::Time.backward(days: 14, period: :evening),
+    number_of_children: rand(1..8),
+    status: status.sample
+    )
+  reservation.user = katsu
+  reservation.babysitter = babysitter_list.sample
+  reservation.save!
+end
+
 puts "Done creating a fake reservation"
 
 puts "Creating fake seeds"
 10.times do
-  user = User.create!(
+  image_url = open('http://le-wagon-tokyo.herokuapp.com/batches/394/student').read
+  fake_user = User.create!(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     address: Faker::Address.street_address,
     phone_number: Faker::PhoneNumber.phone_number,
     email: Faker::Internet.email,
-    password: "123456"
+    password: "123456",
+    image_url: image_url
     )
+  baby_sitter = Babysitter.new(
+    age: rand(18..50),
+    price_per_hour: rand(1000..5000),
+    description: Faker::Movie.quote
+    )
+  baby_sitter.user = fake_user
+  baby_sitter.save!
 end
 
 
