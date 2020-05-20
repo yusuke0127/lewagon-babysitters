@@ -10,8 +10,10 @@
 
 .card-product img {
   height: 100%;
-  width: 240px;
-  object-fit: cover;
+  width: 300px;
+  object-fit: contain;
+  margin-left: 48px;
+  margin-right: 12px;
 }
 
 .card-product h2 {
