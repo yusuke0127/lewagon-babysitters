@@ -4,38 +4,7 @@
     <h5><em>Providing part-time care for your kids</em></h5>
   </div>
 
-  <div id="searchbar">
-    <!-- <div class="searchbar"> -->
-      <form id="searchbar-form" action="/babysitters">
-        <!-- <div class="searchbar__input-wrapper"> -->
-          <label class="searchbar__input">
-            <input id="babysitter_address" type="search" class="input-large input-contrast" name="location" placeholder="Enter a location..." style="height: 56px; width: 370px; margin-right: .4px;">
-
-          <script src="https://cdn.jsdelivr.net/npm/places.js@1.18.2"></script>
-          <script>
-            var placesAutocomplete = places({
-              appId: 'plVUFUC1636O',
-              apiKey: '5e2dacadf19070f6459aee66a275d91f',
-              container: document.querySelector('#babysitter_address')
-            });
-          </script>
-          </label>
-
-          <label class="searchbar__input">
-            <input id="price" type="number" class="price input-large input-contrast" name="price" placeholder="Price in ¥" min="1" max="5000">
-          </label>
-
-          <label class="searchbar__input">
-            <input id="date" type="date" class="date input-large input-contrast" name="date" placeholder="Add date" min="<%= Date.today %>">
-          </label>
-        <!-- </div> -->
-
-        <button id="submit_location" type="submit" class="searchbar__submit btn btn-primary btn-large">
-          <i class="fas fa-search"></i>
-        </button>
-      </form>
-    <!-- </div> -->
-  </div>
+<%= render 'shared/home_search_bar' %>
 
 </div>
 

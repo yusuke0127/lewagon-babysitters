@@ -2,7 +2,16 @@ class BabysittersController < ApplicationController
   skip_before_action :authenticate_user!, only:[:index, :show]
 
   def index
-    @babysitters = policy_scope(Babysitter)
+    @users = policy_scope(Babysitter)
+    if params[:address].present?
+      @users = @users.near(params[:address])
+    end
+
+    @babysitters = Babysitter.where(user_id: @users.map(&:id))
+
+    if params[:price_per_hour].present?
+      @babysitters = @babysitters.where('price_per_hour <= ?', params[:price_per_hour])
+    end
   end
 
   def show
