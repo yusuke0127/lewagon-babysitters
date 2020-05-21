@@ -1,7 +1,7 @@
-class BabysitterPolicy < ApplicationPolicy
+class UserPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      User.joins(:babysitter)
+      scope.all
     end
   end
 
@@ -10,6 +10,6 @@ class BabysitterPolicy < ApplicationPolicy
   end
 
   def update?
-    user = record.user
+    user = user.record
   end
 end

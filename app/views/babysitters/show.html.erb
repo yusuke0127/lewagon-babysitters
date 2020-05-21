@@ -1,29 +1,32 @@
-<div class="container mt-5 mx-auto">
+<div class="container mt-5 mx-auto babysitter-card-container">
 
   <%= render 'shared/home_search_bar' %>
 
-<h1>Meet <%= @babysitter.user.first_name %> :)</h1>
+  <!-- <h1>Meet <%= @babysitter.user.first_name %> :)</h1> -->
 
-<div class="reserve-container mt-5">
-  <div class="card-product">
-    <%= image_tag @babysitter.user.image_url, alt: "alttext"%>
-    <div class="card-product-infos ml-3">
-      <h1><%= @babysitter.description %></h1>
-      <h5> ✅ Speaks Spanish </h5>
-      <h5> ✅ Comfortable with pets </h5>
-      <h6>Hello, My name is <%= @babysitter.user.first_name %>. </h6>
-      <h6>I am a college student with experience in medical and currently a babysitter</h6>
-      <hr>
-      <h5>Location: <%= @babysitter.user.address %></h5>
+  <div class="reserve-container">
 
-      <h5>Email: <a href="mailto:<%= @babysitter.user.email %>">Email me here</a></h5>
+    <div class="card-product">
+      <div class="card-header">
+        <h1>Meet <%= @babysitter.user.first_name %> :) </h1>
+      </div>
+      <%= image_tag @babysitter.user.image_url, alt: "alttext"%>
 
-      <h5>Price: <strong>¥ <%= @babysitter.price_per_hour %></strong> /<em>hr</em></h5>
+      <div class="card-product-infos ml-3">
+        <h1><%= @babysitter.user.first_name %></h1>
+        <h4><%= @babysitter.description %></h4>
+        <hr>
+        <h5>Location: <%= @babysitter.user.address %></h5>
+
+        <h5>Email: <%= @babysitter.user.email %></h5>
+
+        <h5>Price: <strong>¥ <%= @babysitter.price_per_hour %></strong> /<em>hr</em></h5>
+      </div>
     </div>
-  </div>
 
-  <div class="sign-form reserve-form">
-    <%= render "shared/reservation_form", babysitter: @babysitter, reservation: @reservation %>
+    <div class="sign-form reserve-form">
+      <%= render "shared/reservation_form", babysitter: @babysitter, reservation: @reservation %>
+    </div>
   </div>
 </div>
 
