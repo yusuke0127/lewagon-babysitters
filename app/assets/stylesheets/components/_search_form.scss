@@ -10,14 +10,17 @@ div#searchbar {
 #searchbar-form {
   display: flex;
   width: 1000px;
-  height: 31px;
-  input {
+  height: 56px;
+  > input {
     font-size: 16px;
-    border-radius: 4px;
+    border: 1px solid lightgray;
+    border-radius: 2px;
     padding-left: 20px;
-    width: 280px;
-    height: 180%;
+    width: 420px;
     // box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  input {
+    height: 100%;
   }
 }
 
@@ -43,8 +46,7 @@ div.title-main {
 }
 
 button#submit_location.searchbar__submit.btn.btn-primary.btn-large {
-  height: 55px;
-  margin-top: 1px;
+  height: 56px;
   // box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7);
   opacity: .96;
   &:hover{

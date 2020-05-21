@@ -34,8 +34,12 @@ gem 'cloudinary', '~> 1.12.0'
 gem 'devise'
 gem 'faker'
 gem 'font-awesome-sass'
+gem 'geocoder'
 gem 'pundit'
+gem 'pg_search', '~> 2.3.0'
 gem 'simple_form'
+
+
 
 group :development, :test do
   gem 'pry-byebug'

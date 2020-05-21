@@ -1,14 +1,12 @@
 <div class="container mt-5">
 
-<%= render "shared/pages_search_bar", class: "pb-1" %>
-<!-- <div>
-  <p class="babysitter-number">10+ babysitters</p>
-  <h2 class="babysitter-title">Babysitters in Tokyo</h2>
-</div> -->
+<%= render 'shared/home_search_bar' %>
+  
   <div class="row">
     <% @babysitters.each do |babysitter| %>
         <div class="col-6">
           <div class="card-category" style="background-color: white ">
+
             <div class="top-card p-4">
               <div class="sitter-info">
                 <% review = rand(1..5) %>

@@ -1,7 +1,7 @@
 class BabysitterPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.all
+      User.joins(:babysitter)
     end
   end
 
