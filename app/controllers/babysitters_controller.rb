@@ -18,6 +18,5 @@ class BabysittersController < ApplicationController
   def create
     @babysitter = Babysitter.new
     @user = current_user
-    raise
   end
 end
