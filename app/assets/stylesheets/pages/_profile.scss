@@ -1,0 +1,33 @@
+.profile-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+
+.profile-avatar-box {
+  border: 2px solid #DCDCDC;
+  width: 200px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  padding-top: 16px;
+  a {
+    text-decoration: none;
+    color: #E67E22;
+    font-style: bolder;
+
+  }
+  p {
+    margin-top: 12px;
+  }
+}
+
+.profile-box {
+  text-justify: center;
+  width: 600px;
+  a {
+    text-decoration: none;
+    color: #E67E22;
+  }
+}
+
