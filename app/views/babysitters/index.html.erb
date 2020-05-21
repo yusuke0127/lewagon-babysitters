@@ -1,8 +1,8 @@
 <div class="container mt-5">
 
 <%= render 'shared/home_search_bar' %>
-  
-  <div class="row">
+
+  <div class="row mt-4">
     <% @babysitters.each do |babysitter| %>
         <div class="col-6">
           <div class="card-category" style="background-color: white ">
@@ -10,7 +10,7 @@
             <div class="top-card p-4">
               <div class="sitter-info">
                 <% review = rand(1..5) %>
-                <p class="stars mt-3"><%= "⭐️" * review %>(<%= review %>)</p>
+                <p class="stars mt-3"><%= "🍼" * review %>(<%= review %>)</p>
                 <h1><%= babysitter.user.first_name %></h1>
                 <!-- <p><%= babysitter.age %></p> -->
                 <!-- <p><%= babysitter.user.address %></p> -->
