@@ -4,17 +4,17 @@
     <!-- parent image -->
     <div class="card-bookings-infos">
       <h4><%= reservation.user.first_name %></h4>
-      <p>Date: <%= reservation.start_time.strftime("%d %h %Y") %></p>
+      <p>Date: <%= reservation.start_time.strftime("%d %h %Y") %> - <%= reservation.end_time.strftime("%d %h %Y") %></p>
       <p>Time: <%= reservation.start_time.strftime("%H:%M") %> - <%= reservation.end_time.strftime("%H:%M") %></p>
     </div>
     <% if reservation.pending? && present %>
       <%= simple_form_for reservation do |f| %>
         <%= f.input :status, as: :hidden, input_html: { value: 'confirmed' } %>
-        <%= f.submit 'Accept', class: 'btn btn-success' %>
+        <%= f.submit 'Confirm', class: 'accept-btn' %>
       <% end %>
       <%= simple_form_for reservation do |f| %>
         <%= f.input :status, as: :hidden, input_html: { value: 'cancelled' } %>
-        <%= f.submit 'Reject', class: 'btn' %>
+        <%= f.submit 'Cancel', class: 'reject-btn' %>
       <% end %>
     <% end %>
 
