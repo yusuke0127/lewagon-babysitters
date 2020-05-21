@@ -13,10 +13,12 @@ Rails.application.routes.draw do
     resources :reservations, only: [:create]
     # get 'reservations', to: 'reservations#index_babysitter'
   end
-  resources :reservations, only: [:index]
+  resources :reservations, only: [:index, :update]
   resources :users, only: [:show, :update]  do
     resources :babysitters, only: [:new, :create]
   end
+
+  get '/dashboard', to: 'reservations#dashboard', as: :dashboard
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get "/ui", to: 'pages#uidisplay'
 end

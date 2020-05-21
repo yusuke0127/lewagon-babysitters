@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   has_one :babysitter
   has_many :babysitters, through: :reservations
+  has_many :reservations
+  has_many :reservations_as_babysitter, through: :babysitter, source: :reservations
   has_one_attached :photo
 
   devise :database_authenticatable, :registerable,

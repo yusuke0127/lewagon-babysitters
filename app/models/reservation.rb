@@ -7,4 +7,9 @@ class Reservation < ApplicationRecord
 #   validates :babysitter, uniqueness: { scope: :user }
 #   validates :babysitter, uniqueness: { scope: :start_time }
 #   validates :babysitter, uniqueness: { scope: :end_time }
+  STATUS = ['pending', 'confirmed', 'cancelled']
+
+  def pending?
+    status == 'pending'
+  end
 end
