@@ -1,3 +1,19 @@
+.container2 {
+  .search-sec {
+    padding-bottom : 12px;
+  }
+}
+.card-header {
+  position: absolute;
+  top: 24px;
+  left: 45px;
+  background-color: transparent;
+  box-shadow: none;
+  padding-left: 0;
+  border: none;
+}
+
+
 .card-product {
   overflow: hidden;
   height: 500px;
@@ -6,6 +22,7 @@
   display: flex;
   align-items: center;
   flex-grow: 3;
+  position :relative;
 }
 
 .card-product img {
