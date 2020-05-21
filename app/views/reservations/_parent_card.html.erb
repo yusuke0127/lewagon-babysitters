@@ -1,0 +1,10 @@
+<%# if reservation.status == "pending" %>
+  <div class="card-bookings mb-4">
+    <%= image_tag reservation.babysitter.user.image_url %>
+    <div class="card-bookings-infos">
+      <h4><%= reservation.babysitter.user.first_name %></h4>
+      <p>Date: <%= reservation.start_time.strftime("%d %h %Y") %></p>
+      <p>Time: <%= reservation.start_time.strftime("%H:%M") %> - <%= reservation.end_time.strftime("%H:%M") %></p>
+    </div>
+  </div>
+<%# end %>
