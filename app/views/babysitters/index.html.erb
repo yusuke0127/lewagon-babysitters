@@ -1,10 +1,11 @@
 <div class="container mt-5">
 
-<%= render "shared/pages_search_bar" %>
-<div>
+<%#= render "shared/pages_search_bar" %>
+<%= render 'shared/home_search_bar' %>
+<!-- <div>
   <p class="babysitter-number">10+ babysitters</p>
   <h2 class="babysitter-title">Babysitters in Tokyo</h2>
-</div>
+</div> -->
   <div class="cards mt-5">
     <div class="row">
       <% @babysitters.each do |babysitter| %>
