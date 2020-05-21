@@ -34,3 +34,32 @@
 
   }
 }
+
+.accept-btn {
+  background-color: #f8d55a;
+  border-radius: 24px;
+  border: transparent;
+  padding:7px 24px;
+  font-weight:bold;
+  margin-left: 120px;
+  &:hover{
+    background-color: #f7c933;
+    color: white;
+    transition: all .7s ease;
+  }
+}
+
+.reject-btn {
+  background-color: black;
+  color: white;
+  border-radius: 24px;
+  border: transparent;
+  padding:7px 24px;
+  font-weight:bold;
+  margin-left: 4px;
+  &:hover{
+    background-color: #2d2c2c;
+    color: white;
+    transition: all .7s ease;
+  }
+}

@@ -1,8 +1,7 @@
 <div class="container mt-5 mb-3">
   <%= simple_form_for [@babysitter, @reservation] do |f| %>
-    <%= f.input :start_time, as: :date, html5: true, label: "Date", input_html: { min: Date.today } %>
-    <%= f.input :start_time, as: :time, label: "Start", start_hour: 7, end_hour: 23, minute_step: 60 %>
-    <%= f.input :end_time, as: :time, label: "End", start_hour: 8, end_hour: 23, minute_step: 60 %>
+    <%= f.input :start_time, label: "Start", as: :string, input_html: { class: "datepicker" } %>
+    <%= f.input :end_time, label: "End", as: :string, input_html: { class: "datepicker" } %>
     <%= f.input :number_of_children, input_html: { min: 1 }, include_blank: false %>
 
     Price : <strong>¥ <%= @babysitter.price_per_hour %></strong>
