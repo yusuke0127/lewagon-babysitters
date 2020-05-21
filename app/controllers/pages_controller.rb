@@ -4,6 +4,10 @@ class PagesController < ApplicationController
   def home
   end
 
+  def show
+    @user = current.user
+  end
+
   def uidisplay
     @babysitter = Babysitter.new
   end
