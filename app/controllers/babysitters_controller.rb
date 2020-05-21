@@ -10,4 +10,14 @@ class BabysittersController < ApplicationController
     @babysitter = Babysitter.find(params[:id])
     authorize @babysitter
   end
+
+  def new
+
+  end
+
+  def create
+    @babysitter = Babysitter.new
+    @user = current_user
+    raise
+  end
 end
