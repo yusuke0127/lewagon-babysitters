@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   # reservations
   # get '/reservations', to: 'reservations#index', as: :reservations
   # post '/babysitters/:babysitter_id/reservations', to: 'reservations#create'
-  resources :babysitters, only: [:index, :show] do
+  resources :babysitters, only: [:index, :show, :new, :create] do
     resources :reservations, only: [:create]
     # get 'reservations', to: 'reservations#index_babysitter'
   end

@@ -1,0 +1,7 @@
+<h1>Become a babysitter</h1>
+<%= simple_form_for(@babysitter) do |f| %>
+    <%= f.input :age %>
+    <%= f.input :price_per_hour %>
+    <%= f.input :description %>
+    <%= f.button :submit, "Be a Babyistter" %>
+<% end %>
