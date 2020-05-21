@@ -21,11 +21,26 @@ class BabysittersController < ApplicationController
   end
 
   def new
-
+    @babysitter = Babysitter.new
+    authorize @babysitter
   end
 
   def create
-    @babysitter = Babysitter.new
+    @babysitter = Babysitter.new(babysitter_params)
     @user = current_user
+    @babysitter.user = @user
+    authorize @babysitter
+    if @babysitter.save
+      redirect_to user_path(@user)
+    else
+      render :new
+    end
+
+  end
+
+  private
+
+  def babysitter_params
+    params.require(:babysitter).permit(:age, :price_per_hour, :description)
   end
 end

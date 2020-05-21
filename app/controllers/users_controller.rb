@@ -4,12 +4,24 @@ class UsersController < ApplicationController
     authorize @user
   end
 
+  def edit
+    raise
+    @babysitter.find()
+  end
+
   def update
-    @babysitter = Babysitter.new
+    if @babysitter
+      @babysitter = Babysitter.find(params[:babysitter_id])
+    else
+      @babysitter = Babysitter.new
+    end
     @user = current_user
     @babysitter.user = @user
-    @babysitter.save
-    redirect_to user_path(@user)
+    if @babysitter.save
+      redirect_to user_path(@user)
+    else
+        render 'devise/registrations/edit'
+    end
     authorize @babysitter
   end
 end

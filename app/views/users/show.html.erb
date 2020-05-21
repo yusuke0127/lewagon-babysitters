@@ -1,1 +1,7 @@
 <h1>User profile page</h1>
+<% if @user.babysitter %>
+  <%= "This user is a babysitter" %>
+<% else %>
+  <%= "This user is not a babysitter" %>
+<% end %>
+<%= @babysitter %>
