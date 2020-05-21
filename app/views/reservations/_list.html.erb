@@ -1,0 +1,56 @@
+<div class="w3-row">
+  <a href="javascript:void(0)" onclick="openCity(event, 'Pending');">
+    <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding w3-active">Pending</div>
+  </a>
+  <a href="javascript:void(0)" onclick="openCity(event, 'Confirmed');">
+    <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Confirmed</div>
+  </a>
+  <a href="javascript:void(0)" onclick="openCity(event, 'Cancelled');">
+    <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Cancelled</div>
+  </a>
+  <a href="javascript:void(0)" onclick="openCity(event, 'Past');">
+    <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Past</div>
+  </a>
+</div>
+<% Reservation::STATUS.each do |status| %>
+  <div id="<%= status.capitalize %>" class="w3-container city" style='<%= status == 'pending' ? "display:block" : "display:none" %>'>
+    <ul class="list-group list-group-flush mx-3 p-3">
+      <% @reservations.where(status: status).each do |reservation| %>
+        <% if reservation.user == current_user %>
+          <%= render 'reservations/parent_card', reservation: reservation %>
+        <% else %>
+          <%= render 'reservations/babysitter_card', reservation: reservation, present: true %>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div id="Past" class="w3-container city" style="display:none">
+  <ul class="list-group list-group-flush">
+    <% @past_reservations.each do |reservation| %>
+      <% if reservation.user == current_user %>
+        <%= render 'reservations/parent_card', reservation: reservation %>
+      <% else %>
+        <%= render 'reservations/babysitter_card', reservation: reservation, present: false %>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
+
+<script>
+function openCity(evt, cityName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("city");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-active";
+  console.log(evt.currentTarget.firstElementChild)
+}
+</script>

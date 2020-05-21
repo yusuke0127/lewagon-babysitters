@@ -1,0 +1,23 @@
+<%# if reservation.status == "pending" %>
+  <div class="card-bookings mb-4">
+    <%= image_tag reservation.user.image_url %>
+    <!-- parent image -->
+    <div class="card-bookings-infos">
+      <h4><%= reservation.user.first_name %></h4>
+      <p>Date: <%= reservation.start_time.strftime("%d %h %Y") %></p>
+      <p>Time: <%= reservation.start_time.strftime("%H:%M") %> - <%= reservation.end_time.strftime("%H:%M") %></p>
+    </div>
+    <% if reservation.pending? && present %>
+      <%= simple_form_for reservation do |f| %>
+        <%= f.input :status, as: :hidden, input_html: { value: 'confirmed' } %>
+        <%= f.submit 'Accept', class: 'btn btn-success' %>
+      <% end %>
+      <%= simple_form_for reservation do |f| %>
+        <%= f.input :status, as: :hidden, input_html: { value: 'cancelled' } %>
+        <%= f.submit 'Reject', class: 'btn' %>
+      <% end %>
+    <% end %>
+
+  </div>
+<%# end %>
+

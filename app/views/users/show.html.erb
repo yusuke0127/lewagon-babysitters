@@ -1,7 +1,42 @@
-<h1>User profile page</h1>
-<% if @user.babysitter %>
-  <%= "This user is a babysitter" %>
-<% else %>
-  <%= "This user is not a babysitter" %>
-<% end %>
-<%= @babysitter %>
+
+<!-- <h1>User profile page</h1> -->
+<div class="container mt-5 mx-auto">
+  <div class="profile-container">
+    <div class="profile-avatar-box">
+      <div>
+        <%= image_tag @user.image_url, class: "avatar-large", alt: "avatar-large" %>
+        <p><%= link_to "Change the photo",root_path, class: "font-under-photo"%></p>
+      </div>
+    </div>
+
+    <div class="profile-box">
+      <h1>Hello I am <%= @user.first_name %>!</h1>
+      <%= link_to "Edit Profile", root_path  %>
+      <br>
+      <br>
+      <p>First Name: <%= @user.first_name %></p>
+      <p>Last Name: <%= @user.last_name %></p>
+      <p>Phone Number: <%= @user.phone_number %></p>
+      <p>Address: <%= @user.address %></p>
+      <p>Email: <%= @user.email %></p>
+      <br>
+      <button type="button" class="btn btn-warning">Become a babysitter</button>
+    </div>
+  </div>
+
+
+
+<!-- <h1>Name: <%= @user.first_name %> <%= @user.last_name %></h1>
+<h1>Phone Number: <%= @user.phone_number %></h1>
+<h1>Address: <%= @user.address %></h1>
+<h1>email: <%= @user.email %></h1> -->
+
+
+
+
+
+
+</div>
+
+
+

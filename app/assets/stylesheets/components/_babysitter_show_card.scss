@@ -18,7 +18,7 @@
   overflow: hidden;
   height: 500px;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 1px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   flex-grow: 3;
@@ -66,6 +66,7 @@
   display: flex;
   justify-content: space-between;
   width: 1120px;
+  margin-top: 32px;
 }
 
 .btn-outline-info {

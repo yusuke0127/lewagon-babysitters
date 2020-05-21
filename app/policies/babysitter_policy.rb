@@ -19,4 +19,8 @@ class BabysitterPolicy < ApplicationPolicy
   def update?
     user = record.user
   end
+
+  def dashboard?
+    true
+  end
 end
