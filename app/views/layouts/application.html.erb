@@ -28,7 +28,11 @@
             <%= link_to "Bookings", reservations_path, class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/Katsulincon", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <% if user_signed_in? %>
+              <%= image_tag "https://kitt.lewagon.com/placeholder/users/Katsulincon", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+
+            <% end %>
+            <%= image_tag "", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
               <% if user_signed_in? && current_user.babysitter %>
                 <%= link_to "My Profile", user_path(current_user), class: "dropdown-item" %>
