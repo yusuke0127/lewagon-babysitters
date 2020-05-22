@@ -68,9 +68,10 @@
         </ul>
       </div>
     </div>
-
-    <%= yield %>
-    <%= render 'shared/flashes' %>
+    <div class="main-container">
+      <%= yield %>
+    </div>
     <%= render 'shared/footer' %>
+    <%= render 'shared/flashes' %>
   </body>
 </html>

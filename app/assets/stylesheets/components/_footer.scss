@@ -6,7 +6,9 @@
   height: 80px;
   padding: 0px 50px;
   color: rgba(0,0,0,0.3);
+  border-top: 2px solid #DCDCDC;
 }
+
 .footer-links {
   display: flex;
   align-items: center;
@@ -24,4 +26,8 @@
 }
 .footer .fa-heart {
   color: #D23333;
+}
+
+.main-container {
+  min-height: 80vh;
 }
