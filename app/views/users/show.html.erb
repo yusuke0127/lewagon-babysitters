@@ -5,13 +5,17 @@
     <div class="profile-avatar-box">
       <div>
         <%= image_tag @user.image_url, class: "avatar-large", alt: "avatar-large" %>
-        <p><%= link_to "Change the photo",root_path, class: "font-under-photo"%></p>
+        <% if policy(@user).edit? %>
+          <p><%= link_to "Change the photo",root_path, class: "font-under-photo"%></p>
+        <% end %>
       </div>
     </div>
 
     <div class="profile-box">
       <h1>Hello I am <%= @user.first_name %>!</h1>
-      <%= link_to "Edit Profile", root_path  %>
+      <% if policy(@user).edit? %>
+        <%= link_to "Edit Profile", edit_user_registration_path  %>
+      <% end %>
       <br>
       <br>
       <p>First Name: <%= @user.first_name %></p>
