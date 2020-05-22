@@ -1,6 +1,8 @@
 <%# if reservation.status == "pending" %>
   <div class="card-bookings mb-4">
-    <%= image_tag reservation.babysitter.user.image_url %>
+    <%= link_to user_path(reservation.babysitter.user) do  %>
+      <%= image_tag reservation.babysitter.user.image_url %>
+    <% end %>
     <div class="card-bookings-infos">
       <h4><%= link_to reservation.babysitter.user.first_name, user_path(reservation.babysitter.user) %></h4>
       <p>Date: <%= reservation.start_time.strftime("%d %h %Y") %> - <%= reservation.end_time.strftime("%d %h %Y") %></p>
@@ -8,3 +10,5 @@
     </div>
   </div>
 <%# end %>
+
+
