@@ -25,3 +25,15 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+
+li.nav-item.active {
+  margin-right: 8px;
+  &:hover {
+    // background-color: #f7c933;
+    border-radius: 20px;
+    padding: 0px 20px;
+    transition: all .7s ease;
+    border: 2px solid white;
+  }
+}
