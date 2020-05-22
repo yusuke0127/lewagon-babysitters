@@ -23,7 +23,7 @@ class ReservationsController < ApplicationController
     # @reservation.user = @user
     authorize @reservation
     if @reservation.save
-      redirect_to reservations_path
+      redirect_to reservations_path, notice: "Thank you for reserving. Please wait for the #{@babysitter.user.first_name}'s reply"
     else
       render 'babysitters/index'
     end
