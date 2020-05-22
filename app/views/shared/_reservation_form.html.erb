@@ -1,10 +1,10 @@
-<div class="container mt-5 mb-3">
+<div class="container mt-5 mb-3" data-controller="price">
   <%= simple_form_for [@babysitter, @reservation] do |f| %>
-    <%= f.input :start_time, label: "Start", as: :string, input_html: { class: "datepicker" } %>
-    <%= f.input :end_time, label: "End", as: :string, input_html: { class: "datepicker" } %>
+    <%= f.input :start_time, label: "Start", as: :string, input_html: { class: "datepicker", data: {target: "price.startTime", action: "change->price#calculate"  }} %>
+    <%= f.input :end_time, label: "End", as: :string, input_html: { class: "datepicker", data: {target: "price.endTime", action: "change->price#calculate" } } %>
     <%= f.input :number_of_children, input_html: { min: 1 }, include_blank: false %>
-
-    Price : <strong>¥ <%= @babysitter.price_per_hour %></strong>
+    <!-- <p data-action="change->counter#calculate"></p> -->
+    Price : <strong data-target="price.totalPrice" data-price-per-hour="<%= @babysitter.price_per_hour %>">¥ <%= @babysitter.price_per_hour %></strong>
     <hr>
     <%= f.submit "Reserve!", class: 'btn btn-warning' %>
   <% end %>
