@@ -1,22 +1,27 @@
 <%# if reservation.status == "pending" %>
   <div class="card-bookings mb-4">
-    <%= image_tag reservation.user.image_url %>
+    <%= link_to user_path(reservation.user) do  %>
+      <%= image_tag reservation.user.image_url %>
+    <% end %>
     <!-- parent image -->
     <div class="card-bookings-infos">
       <h4><%= link_to reservation.user.first_name, user_path(reservation.user) %></h4>
       <p>Date: <%= reservation.start_time.strftime("%d %h %Y") %> - <%= reservation.end_time.strftime("%d %h %Y") %></p>
       <p>Time: <%= reservation.start_time.strftime("%H:%M") %> - <%= reservation.end_time.strftime("%H:%M") %></p>
     </div>
-    <% if reservation.pending? && present %>
-      <%= simple_form_for reservation do |f| %>
-        <%= f.input :status, as: :hidden, input_html: { value: 'confirmed' } %>
-        <%= f.submit 'Confirm', class: 'accept-btn' %>
+
+    <div class="buttons-confirm-cancel">
+      <% if reservation.pending? && present %>
+        <%= simple_form_for reservation do |f| %>
+          <%= f.input :status, as: :hidden, input_html: { value: 'confirmed' } %>
+          <%= f.submit 'Confirm', class: 'accept-btn' %>
+        <% end %>
+        <%= simple_form_for reservation do |f| %>
+          <%= f.input :status, as: :hidden, input_html: { value: 'cancelled' } %>
+          <%= f.submit 'Cancel', class: 'reject-btn' %>
+        <% end %>
       <% end %>
-      <%= simple_form_for reservation do |f| %>
-        <%= f.input :status, as: :hidden, input_html: { value: 'cancelled' } %>
-        <%= f.submit 'Cancel', class: 'reject-btn' %>
-      <% end %>
-    <% end %>
+    </div>
 
   </div>
 <%# end %>

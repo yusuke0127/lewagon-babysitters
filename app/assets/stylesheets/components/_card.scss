@@ -1,5 +1,6 @@
 .cards {
   display: flex;
+  grid-columns-template: 1fr;
 }
 .card-remove-link {
   position: absolute;
@@ -65,17 +66,18 @@
 ///////////tab cards//////////////////////
 .card-bookings {
   overflow: hidden;
-  height: 127px;
+  height: 140px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  width: 88vh;
+  width: 90vh;
+  position: relative;
 }
 
 .card-bookings img {
   height: 100%;
-  width: 120px;
+  width: 140px;
   object-fit: cover;
 }
 
@@ -100,6 +102,10 @@
 
 .card-bookings .card-bookings-infos {
   padding: 16px;
+  a {
+    text-decoration: none;
+    color: black;
+  }
 }
 
 p.stars.mt-3 {
@@ -107,22 +113,15 @@ p.stars.mt-3 {
   text-shadow: none;
 }
 
+.buttons-confirm-cancel {
+  // margin-top: 5px;
+  display: flex;
+  margin-right: 26px;
+  margin-bottom: 18px;
+}
+
 /////////////////////////////
 
-
-// Smallest device
-@media (min-width: 100px) and (max-width: 575px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
-}
-
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
-}
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
@@ -133,13 +132,6 @@ p.stars.mt-3 {
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
-  .cards {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
   .cards {
     grid-template-columns: 1fr 1fr 1fr;
   }
