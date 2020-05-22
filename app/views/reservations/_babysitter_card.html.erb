@@ -3,7 +3,7 @@
     <%= image_tag reservation.user.image_url %>
     <!-- parent image -->
     <div class="card-bookings-infos">
-      <h4><%= reservation.user.first_name %></h4>
+      <h4><%= link_to reservation.user.first_name, user_path(reservation.user) %></h4>
       <p>Date: <%= reservation.start_time.strftime("%d %h %Y") %> - <%= reservation.end_time.strftime("%d %h %Y") %></p>
       <p>Time: <%= reservation.start_time.strftime("%H:%M") %> - <%= reservation.end_time.strftime("%H:%M") %></p>
     </div>

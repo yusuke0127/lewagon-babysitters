@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def show
-    @user = current_user
+    @user = User.find(params[:id])
     authorize @user
   end
 
@@ -17,11 +17,11 @@ class UsersController < ApplicationController
     end
     @user = current_user
     @babysitter.user = @user
+    authorize @babysitter
     if @babysitter.save
       redirect_to user_path(@user)
     else
         render 'devise/registrations/edit'
     end
-    authorize @babysitter
   end
 end
