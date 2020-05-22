@@ -119,6 +119,30 @@ yusuke_sitter.save!
 
 puts "Done creating #{yusuke.first_name} the babysitter"
 
+puts "Creating yannsister"
+yannsister = User.create!(
+  first_name: "Yann",
+  last_name: "Sister",
+  address: "790 Meguro, Tokyo",
+  phone_number: "09056781235",
+  email: "yann.sister@gmail.com",
+  password: "123456",
+  image_url: 'https://i.ibb.co/31CNngh/image.png'
+  )
+
+puts "Done"
+
+yannsister_sitter = Babysitter.new(
+  age: 40,
+  price_per_hour: 900,
+  description: "People call me YannSister! I love children!"
+  )
+
+yannsister_sitter.user = yannsister
+yannsister_sitter.save!
+
+puts "Done creating #{yannsister.first_name} the babysitter"
+
 puts "Creating doug"
 doug = User.create!(
   first_name: "Doug",
@@ -153,21 +177,21 @@ reservation_2 = Reservation.new(
   end_time: Faker::Time.forward(days: 1, period: :evening),
   number_of_children: 1
   )
-reservation_2.user = trouni
+reservation_2.user = yannsister
 reservation_2.babysitter = yusuke_sitter
 reservation_2.save!
 
-status = ['past', 'confirmed', 'cancelled']
-babysitter_list = [pins_sitter, yusuke_sitter]
+status = ['pending', 'past', 'confirmed', 'cancelled']
+babysitter_list = [pins_sitter, yusuke_sitter, yannsister_sitter]
 
-10.times do
+20.times do
   reservation = Reservation.new(
     start_time: Faker::Time.backward(days: 14, period: :afternoon),
     end_time: Faker::Time.backward(days: 14, period: :evening),
     number_of_children: rand(1..8),
     status: status.sample
     )
-  reservation.user = katsu
+  reservation.user = yusuke
   reservation.babysitter = babysitter_list.sample
   reservation.save!
 end
