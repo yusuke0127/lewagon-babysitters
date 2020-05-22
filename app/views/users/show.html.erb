@@ -20,11 +20,12 @@
       <p>Address: <%= @user.address %></p>
       <p>Email: <%= @user.email %></p>
       <br>
-      <button type="button" class="btn btn-warning">Become a babysitter</button>
+      <% unless current_user.babysitter %>
+        <!-- <button type="button" class="btn btn-warning">Become a babysitter</button> -->
+        <%= link_to 'Become a babysitter', new_user_babysitter_path(current_user), class: "accept-btn-user-profile" %>
+      <% end %>
     </div>
   </div>
-
-
 
 <!-- <h1>Name: <%= @user.first_name %> <%= @user.last_name %></h1>
 <h1>Phone Number: <%= @user.phone_number %></h1>
