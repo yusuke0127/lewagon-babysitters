@@ -71,7 +71,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  width: 90vh;
+  width: 800px;
   position: relative;
 }
 
@@ -118,6 +118,7 @@ p.stars.mt-3 {
   display: flex;
   margin-right: 26px;
   margin-bottom: 18px;
+  // z-index: 999;
 }
 
 /////////////////////////////

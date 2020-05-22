@@ -5,8 +5,8 @@
     <% end %>
     <div class="card-bookings-infos">
       <h4><%= link_to reservation.babysitter.user.first_name, user_path(reservation.babysitter.user) %></h4>
-      <p>Date: <%= reservation.start_time.strftime("%d %h %Y") %> - <%= reservation.end_time.strftime("%d %h %Y") %></p>
-      <p>Time: <%= reservation.start_time.strftime("%H:%M") %> - <%= reservation.end_time.strftime("%H:%M") %></p>
+      <p><i class="fas fa-calendar-alt"></i> <%= reservation.start_time.strftime("%d %h %Y") %> - <%= reservation.end_time.strftime("%d %h %Y") %></p>
+      <p><i class="fas fa-clock"></i> <%= reservation.start_time.strftime("%H:%M %p") %> - <%= reservation.end_time.strftime("%H:%M %p") %></p>
     </div>
   </div>
 <%# end %>
