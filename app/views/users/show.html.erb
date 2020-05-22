@@ -20,10 +20,10 @@
       <p>Address: <%= @user.address %></p>
       <p>Email: <%= @user.email %></p>
       <br>
-      <% unless current_user.babysitter %>
+      <%# unless current_user.babysitter %>
         <!-- <button type="button" class="btn btn-warning">Become a babysitter</button> -->
-        <%= link_to 'Become a babysitter', new_user_babysitter_path(current_user), class: "accept-btn-user-profile" %>
-      <% end %>
+        <%#= link_to 'Become a babysitter', new_user_babysitter_path(current_user), class: "accept-btn-user-profile" %>
+      <%# end %>
     </div>
   </div>
 
