@@ -4,7 +4,7 @@
     <%= f.input :end_time, label: "End", as: :string, input_html: { class: "datepicker", data: {target: "price.endTime", action: "change->price#calculate" } } %>
     <%= f.input :number_of_children, input_html: { min: 1 }, include_blank: false %>
     <!-- <p data-action="change->counter#calculate"></p> -->
-    Price : <strong data-target="price.totalPrice" data-price-per-hour="<%= @babysitter.price_per_hour %>">¥ <%= @babysitter.price_per_hour %></strong>
+    Total Price : <strong data-target="price.totalPrice" data-price-per-hour="<%= @babysitter.price_per_hour %>">¥ <%= @babysitter.price_per_hour %></strong>
     <hr>
     <%= f.submit "Reserve!", class: 'btn btn-warning' %>
   <% end %>
