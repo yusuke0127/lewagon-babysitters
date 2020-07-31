@@ -25,9 +25,9 @@ To be able to hire a babysitter you will have to create an account. You can use 
 ## Team
 <table>
   <thead>
-    <th>Back End Lead</th>
-    <th>Front End Lead</th>
-    <th>Project Manager</th>
+    <th>Full-Stack Developer</th>
+    <th>Full-Stack Developer</th>
+    <th>Full-Stack Developer</th>
   </thead>
   <tbody>
    <tr>
@@ -54,8 +54,3 @@ To be able to hire a babysitter you will have to create an account. You can use 
     </tr>
   </tbody>
 </table>
-
-
-## Template
-
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
